@@ -35,3 +35,18 @@ maxItems = 6;      //error
  
 ###5. Declaring Objects with Const
 
+```
+const person = {
+    name: "Nicholas"
+};
+
+// works
+person.name = "Greg";
+
+// throws an error
+person = {
+    name: "Greg"
+};
+
+```
+
