@@ -3,10 +3,10 @@
  */
 "use strict"
 
-const obj = {
-    name:'aaa'
+
+for (const i = 0; i < 10; i++) {
+    setTimeout(function () {
+        console.log(i);
+    }, 0)
 }
 
-obj.aa = "aa";
-
-console.log(obj.name);
