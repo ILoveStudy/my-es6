@@ -1,12 +1,10 @@
-/**
- * Created by richardgong on 23/08/2016.
- */
 "use strict"
 
+let colors = [ "red", "green", "blue" ],
+    a = "black",
+    b = "purple";
 
-for (const i = 0; i < 10; i++) {
-    setTimeout(function () {
-        console.log(i);
-    }, 0)
-}
+[ a,b ] = colors;
 
+console.log(a);        // "red"
+console.log(b);       // "green"
