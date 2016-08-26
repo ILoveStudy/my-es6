@@ -1,10 +1,8 @@
-"use strict"
+function setCookie(name, value, {
+    secure = false,
+    path = "/",
+    domain = "example.com",
+    expires = new Date(Date.now() + 360000000)
+} = {}) {
 
-let colors = [ "red", "green", "blue" ],
-    a = "black",
-    b = "purple";
-
-[ a,b ] = colors;
-
-console.log(a);        // "red"
-console.log(b);       // "green"
+}

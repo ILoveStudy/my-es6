@@ -30,6 +30,8 @@ let b = 5;
 console.log(a);      // undefined
 console.log(b);      // undefined
 
+
+
 ```
 
 ##Default Values
@@ -74,6 +76,8 @@ console.log(localName);     // "bar"
 
 ```
 ##Nested Object Destructuring
+
+noted:same key 
 
 ```
 let node = {
@@ -219,5 +223,117 @@ let [ firstColor, [ secondColor ] ] = colors;
 
 console.log(firstColor);        // "red"
 console.log(secondColor);       // "green"
+
+```
+
+
+##Rest Items
+
+```
+let colors = [ "red", "green", "blue" ];
+
+let [ firstColor, ...restColors ] = colors;
+
+console.log(firstColor);        // "red"
+console.log(restColors.length); // 2
+console.log(restColors[0]);     // "green"
+console.log(restColors[1]);     // "blue"
+
+
+// cloning an array in ECMAScript 6
+let colors = [ "red", "green", "blue" ];
+let [ ...clonedColors ] = colors;
+
+console.log(clonedColors);      //"[red,green,blue]"
+
+not need same key
+
+```
+
+##Mixed Destructuring
+
+```
+let node = {
+        type: "Identifier",
+        name: "foo",
+        loc: {
+            start: {
+                line: 1,
+                column: 1
+            },
+            end: {
+                line: 1,
+                column: 4
+            }
+        },
+        range: [0, 3]
+    };
+
+let {
+    loc: { start },
+    range: [ startIndex ]
+} = node;
+
+console.log(start.line);        // 1
+console.log(start.column);      // 1
+console.log(startIndex);        // 0
+
+
+```
+
+
+##Destructured Parameters
+
+```
+// properties on options represent additional parameters
+function setCookie(name, value, options) {
+
+    options = options || {};
+
+    let secure = options.secure,
+        path = options.path,
+        domain = options.domain,
+        expires = options.expires;
+
+    // code to set the cookie
+}
+
+// third argument maps to options
+setCookie("type", "js", {
+    secure: true,
+    expires: 60000
+});
+
+
+Destructured Parameters
+
+
+function setCookie(name, value, { secure, path, domain, expires }) {
+
+    // code to set the cookie
+}
+
+setCookie("type", "js", {
+    secure: true,
+    expires: 60000
+});
+
+
+function setCookie(name, value, { secure, path, domain, expires } = {}) {
+
+    // ...
+}
+
+
+
+function setCookie(name, value, {
+    secure = false,
+    path = "/",
+    domain = "example.com",
+    expires = new Date(Date.now() + 360000000)
+} = {}) {
+
+}
+
 
 ```
