@@ -336,4 +336,19 @@ function setCookie(name, value, {
 }
 
 
+function setCookie(name, value,
+    {
+        secure = false,
+        path = "/",
+        domain = "example.com",
+        expires = new Date(Date.now() + 360000000)
+    } = {domain:'hahaaha'}) {
+
+    console.log(domain);//hahaaha
+
+}
+setCookie('a','a');
+
+
+
 ```
