@@ -6,8 +6,19 @@
 </head>
 <body>
 <script>
-    import { identifier1, identifier2 } from "./example.js";
 
+        var arr = [1, 2, 2, 3, 4, 5, 5, 55, 5, 666, 6, 6, 66, 6, 6, 1, 1, 1];
+        var b = [];
+        for (var i = 0; i < arr.length; i++) {
+            if(arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])){
+                b.push(arr[i]);
+            } else{
+                arr.splice(i, 1)
+                i--;
+            }
+        }
+        console.log(index);
+        console.log(b);
 
 </script>
 </body>

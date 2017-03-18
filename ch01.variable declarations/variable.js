@@ -1,16 +1,11 @@
-/**
- * Created by richard.g on 06/03/2017.
- */
+const n = 1.1000222;
+var n1 = n.toFixed(2);
+console.log(n1);
 
-/**
- *
- */
 
-/**
- *4. var have no scope
- */
-// {
-//     var a = 10;
-// }
-//
-// console.log(a);
+
+
+
+
+
+
